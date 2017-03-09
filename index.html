@@ -106,6 +106,25 @@ _*Azure Functions itself is open source on GitHub_
 _timer-based task_ ⏲ _the "cron of the cloud"_
                     </script>
                 </section>
+                <section data-markdown>
+                    <script type="text/template">
+## 🐍 Python Demo 🐍
+
+_offload queue-based workload_
+
+```
+                         +--------+
+                         |        |
+        +---------+      | item 1 |      +----------------+
+        |         |      | item 2 |      |                |
+        | Web App +----->+ item 3 +----->+ Azure Function |
+        |         |      | ...    |      |                |
+        +---------+      | item n |      +----------------+
+                         |        |
+                         +--------+
+```
+                    </script>
+                </section>
 			</div>
 		</div>
 
