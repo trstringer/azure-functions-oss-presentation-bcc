@@ -114,15 +114,40 @@ _offload queue-based workload_
 
 ```
                          +--------+
-                         |        |
-        +---------+      | item 1 |      +----------------+
-        |         |      | item 2 |      |                |
-        | Web App +----->+ item 3 +----->+ Azure Function |
-        |         |      | ...    |      |                |
-        +---------+      | item n |      +----------------+
-                         |        |
+                         | Queue  |
+        +---------+      | ------ |      +----------------+
+        |         |      | item 1 |      |                |
+        | Web App +----->+ item 2 +----->+ Azure Function |
+        |         |      | item 3 |      |                |
+        +---------+      | ...    |      +----------------+
+                         | item n |
                          +--------+
 ```
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+## Scaling
+
+Two types of Azure Functions service plans...
+- Consumption plan 🌟
+ - Dynamic scaling by requirement
+ - Good for _intermittent_ or _short duration_ jobs
+- App Service plan 🖥
+ - Dedicated VMs for all App Service apps
+ - Good for _continuously running_ jobs
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+## Continuous Delivery 💫
+
+- Local Git repo
+- GitHub
+- Bitbucket
+- Dropbox
+- Visual Studio Team Services
+- ...and more!
                     </script>
                 </section>
 			</div>
