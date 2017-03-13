@@ -106,6 +106,42 @@ _*Azure Functions itself is open source on GitHub_
                 </section>
                 <section data-markdown>
                     <script type="text/template">
+## How do Functions work? 🤔
+
+```text
+        +             +----------------+
+        |   Trigger   |                |
+        +------------>+                +-+
+                      |    Azure       | |    Output
+                      |    Function    | +-+  Binding
+        +------------>+                | | +----------->
+        |   Input     |                | | |
+        +   Binding   +-+--------------+ | |
+                        |                | |
+                        +-+--------------+ |
+                          |                |
+                          +----------------+
+```
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+## Triggers ⚡️ and Bindings 🔀
+
+| Type                  | Trigger   | Input | Output    |
+| --------------------- |:---------:|:-----:|:---------:|
+| Schedule              | x         | x     | x         |
+| HTTP (REST/webhook)   | x         |       | x         |
+| Blob Storage          | x         | x     | x         |
+| Storage Queues        | x         |       | x         |
+| Storage Tables        |           | x     | x         |
+| Twilio SMS Text       |           |       | x         |
+
+*... and many more*
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
 ## 🐍 Python Demo 🐍
 
 _timer-based task_ ⏲ _the "cron of the cloud"_
@@ -115,19 +151,7 @@ _timer-based task_ ⏲ _the "cron of the cloud"_
                     <script type="text/template">
 ## 🚀 Node.js Demo 🚀
 
-_offload queue-based workload_
-
-```
-                         +--------+
-                         | Queue  |
-        +---------+      | ------ |      +----------------+
-        |         |      | item 1 |      |                |
-        | Web App +----->+ item 2 +----->+ Azure Function |
-        |         |      | item 3 |      |                |
-        +---------+      | ...    |      +----------------+
-                         | item n |
-                         +--------+
-```
+*HTTP-triggered web API*
                     </script>
                 </section>
                 <section data-markdown>
