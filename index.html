@@ -167,6 +167,21 @@ Two types of Azure Functions service plans...
                 </section>
                 <section data-markdown>
                     <script type="text/template">
+## Function app dir structure 📂
+
+```text
+    ├── host.json           <-- global config for all funcs
+    ├── jshttp              <-- function dir
+    │   ├── function.json   <-- config for function
+    │   └── index.js        <-- function code
+    └── pytimer             <-- function dir
+        ├── function.json   <-- config for function
+        └── run.py          <-- function code
+```
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
 ## 🐍 Python Demo 🐍
 
 _timer-based task_ ⏲ _the "cron of the cloud"_
