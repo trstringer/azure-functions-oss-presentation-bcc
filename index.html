@@ -172,17 +172,17 @@ Two types of Azure Functions service plans...
 ```text
     ├── host.json           <-- global config for all funcs
     ├── jshttp              <-- function dir
-    │   ├── function.json   <-- config for function
-    │   └── index.js        <-- function code
+    │   ├── function.json   <-- .. config for function
+    │   └── index.js        <-- .. function code
     └── pytimer             <-- function dir
-        ├── function.json   <-- config for function
-        └── run.py          <-- function code
+        ├── function.json   <-- .. config for function
+        └── run.py          <-- .. function code
 ```
                     </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-## Monitoring 🔬
+## Monitoring 📈
 
 - Portal metrics
 
@@ -194,6 +194,27 @@ Two types of Azure Functions service plans...
 curl -u user_name \
 https://app_name.scm.azurewebsites.net/api/logstream/application
 ```
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+## Restrict HTTP access 🛡
+
+- Use keys 🔑
+ - Host keys are shared between functions in the app
+ - Function keys are for a single function
+ - `https://app_url/api/func_name?code=key`
+- App Service Authentication
+ - Facebook, Google, Twitter, Microsoft, Azure AD
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+## A word on Proxies 💡
+
+- Single API surface for multiple functions
+- Allows for a microservice approach to HTTP functions
+- *Currently in public preview*
                     </script>
                 </section>
                 <section data-markdown>
