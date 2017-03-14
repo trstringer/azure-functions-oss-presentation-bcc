@@ -182,6 +182,22 @@ Two types of Azure Functions service plans...
                 </section>
                 <section data-markdown>
                     <script type="text/template">
+## Monitoring 🔬
+
+- Portal metrics
+
+![monitoring portal](./images/monitoring_portal.png)
+
+- Streaming logs
+
+```text
+curl -u user_name \
+https://app_name.scm.azurewebsites.net/api/logstream/application
+```
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
 ## 🐍 Python Demo 🐍
 
 _timer-based task_ ⏲ _the "cron of the cloud"_
