@@ -41,6 +41,16 @@
                 </section>
 				<section data-markdown>
                     <script type="text/template">
+### What we will talk about today
+
+1. What is Serverless?
+1. Azure Functions overview and features
+1. OSS workloads in Azure Functions
+1. Real world OSS Azure Function App
+                    </script>
+                </section>
+				<section data-markdown>
+                    <script type="text/template">
 ### What is Serverless?🤔
 
 - Function as a Service (maybe?)
@@ -91,22 +101,6 @@ _a solution for easily running small pieces of code, or "functions", in the clou
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-### Cross Platform
-
-#### Meeting OSS Developers at their tool of choice
-
-Azure Functions supports the following
-- Node.js 🚀
-- Python 🐍
-- Java ☕️
-- PHP 🐘
-- bash shell scripting 💻
-
-_*Azure Functions itself is open source on GitHub_
-                    </script>
-                </section>
-                <section data-markdown>
-                    <script type="text/template">
 ## How do Functions work? 🤔
 
 ```text
@@ -152,18 +146,6 @@ Two types of Azure Functions service plans...
 - App Service plan 🖥
  - Dedicated VMs for all App Service apps
  - Good for _continuously (or long) running_ jobs
-                    </script>
-                </section>
-                <section data-markdown>
-                    <script type="text/template">
-## Continuous Delivery 💫
-
-- Local Git repo
-- GitHub
-- Bitbucket
-- Dropbox
-- Visual Studio Team Services
-- ...and more!
                     </script>
                 </section>
                 <section data-markdown>
@@ -220,6 +202,47 @@ https://app_name.scm.azurewebsites.net/api/logstream/application
                 </section>
                 <section data-markdown>
                     <script type="text/template">
+## Durable Functions ♻️
+
+- Stateful Azure Functions implementations
+- Relies on an Orchestrator Function
+- Patterns for usage
+    - Function coordination/chaining
+    - Asynchronous APIs
+    - ...many more
+- Learn more at [goo.gl/bUXRPb](https://goo.gl/bUXRPb)
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+### Cross Platform
+
+#### Meeting OSS Developers at their tool of choice
+
+Azure Functions supports the following
+- Node.js 🚀
+- Python 🐍
+- Java ☕️
+- PHP 🐘
+- bash shell scripting 💻
+
+_*Azure Functions itself is open source on GitHub_
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+## Continuous Delivery 💫
+
+- Local Git repo
+- GitHub
+- Bitbucket
+- Dropbox
+- Visual Studio Team Services
+- ...and more!
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
 ## Azure Functions on Linux 🐧
 
 - *Currently in preview*
@@ -244,17 +267,6 @@ https://app_name.scm.azurewebsites.net/api/logstream/application
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-## Durable Functions ♻️
-
-- Stateful Azure Functions implementations
-- Relies on an Orchestrator Function
-- Patterns for usage
-    - pattern1
-    - pattern2
-                    </script>
-                </section>
-                <section data-markdown>
-                    <script type="text/template">
 ## Real World OSS Azure Functions
 
 ### ⭐️ Sherlock ⭐️
@@ -262,6 +274,7 @@ https://app_name.scm.azurewebsites.net/api/logstream/application
 
 - I didn't find any solution for secure integration testing target environments
 - In an OSS project you can't give the build server all access to a subscription
+- Developed out in the open: [github.com/tstringer/sherlock](https://github.com/tstringer/sherlock)
                     </script>
                 </section>
                 <section data-markdown>
