@@ -91,17 +91,16 @@ _a solution for easily running small pieces of code, or "functions", in the clou
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-### Open source? Microsoft?? 😂
+### Cross Platform
 
-#### Yes... I'm serious 😐
+#### Meeting OSS Developers at their tool of choice
 
 Azure Functions supports the following
-- **Node.js** 🚀
-- **Python** 🐍
-- **PHP** 🐘
-- **bash shell scripting** 💻
-- **Java** ☕️
-- C#/F#/batch
+- Node.js 🚀
+- Python 🐍
+- Java ☕️
+- PHP 🐘
+- bash shell scripting 💻
 
 _*Azure Functions itself is open source on GitHub_
                     </script>
@@ -152,7 +151,7 @@ Two types of Azure Functions service plans...
  - Good for _intermittent_ or _short duration_ jobs
 - App Service plan 🖥
  - Dedicated VMs for all App Service apps
- - Good for _continuously running_ jobs
+ - Good for _continuously (or long) running_ jobs
                     </script>
                 </section>
                 <section data-markdown>
@@ -221,16 +220,26 @@ https://app_name.scm.azurewebsites.net/api/logstream/application
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-## 🐍 Python Demo 🐍
+## Azure Functions on Linux 🐧
 
-![blah](./testrecording.gif)
+- *Currently in preview*
+- Based on Docker containers 🐳
+- Two types of approaches
+    - Bring your own container
+    - Let App Service manage the container
+- Learn more at [goo.gl/dUTK4n](https://goo.gl/dUTK4n)
                     </script>
                 </section>
                 <section data-markdown>
                     <script type="text/template">
-## 🚀 Node.js Demo 🚀
+## Develop Azure Functions locally on Linux 🐧
 
-*HTTP-triggered web API*
+### Demo
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+![blah](./azfdemo.gif)
                     </script>
                 </section>
                 <section data-markdown>
@@ -242,6 +251,32 @@ https://app_name.scm.azurewebsites.net/api/logstream/application
 - Patterns for usage
     - pattern1
     - pattern2
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+## Real World OSS Azure Functions
+
+### ⭐️ Sherlock ⭐️
+#### Azure sandbox provisioning tool
+
+- I didn't find any solution for secure integration testing target environments
+- In an OSS project you can't give the build server all access to a subscription
+                    </script>
+                </section>
+                <section data-markdown>
+                    <script type="text/template">
+## Sherlock Architecture
+
+Azure Function App with four Functions:
+1. ⏰ **Identity Manager**
+    - Maintain a queue of unused service principals
+1. 🔄 **Sandbox Provisioner**
+    - Create the environment end-to-end
+1. 🔄 **Metadata Manager**
+    - Maintain environment metadata
+1. ⏰ **Cleanup**
+    - Timer to check expired sandbox environments
                     </script>
                 </section>
                 <section data-markdown>
